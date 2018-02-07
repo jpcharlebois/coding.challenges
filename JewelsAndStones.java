@@ -16,3 +16,25 @@
  * S and J will consist of letters and have length at most 50.
  * The characters in J are distinct.
  */
+
+class Solution {
+    public int numJewelsInStones(String J, String S) {
+        // double for loop
+        
+        // keep track of count, to return later
+        int count = 0;
+        
+        char[] stones = S.toCharArray();
+        char[] jewels = J.toCharArray();
+        // loop through the stones first
+        for (int s = 0; s < stones.length; s++) {
+            for (int j = 0; j < jewels.length; j++) {
+                if (stones[s] == jewels[j]) {
+                    count++;
+                }
+            }
+        }
+        
+        return count;
+    }
+}
